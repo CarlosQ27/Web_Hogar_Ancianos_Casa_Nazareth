@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav style={navStyle}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <h2 style={{ color: 'white', margin: 0 }}>Hogar Nazareth</h2>
+        <h2 style={{ color: 'white', margin: 0 }}>Hogar de Ancianos "Casa Nazareth" de Moravia </h2>
         <div>
           <Link 
             to="/" 
