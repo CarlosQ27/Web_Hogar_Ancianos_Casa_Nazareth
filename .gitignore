@@ -1,0 +1,168 @@
+# =======================
+# ROOT PROJECT GITIGNORE
+# =======================
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test.local
+.env.production
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =======================
+# FRONTEND (React/Vite)
+# =======================
+
+# Dependencies
+client/node_modules/
+client/.pnpm-debug.log*
+client/yarn-error.log*
+
+# Build outputs
+client/dist/
+client/dist-ssr/
+client/build/
+
+# Logs
+client/logs
+client/*.log
+client/npm-debug.log*
+client/yarn-debug.log*
+client/pnpm-debug.log*
+client/lerna-debug.log*
+
+# Runtime data
+client/pids
+client/*.pid
+client/*.seed
+client/*.pid.lock
+
+# Coverage directory used by tools like istanbul
+client/coverage/
+client/.nyc_output
+
+# =======================
+# BACKEND (.NET)
+# =======================
+
+# Build results
+server/bin/
+server/obj/
+server/out/
+server/publish/
+
+# User-specific files
+server/*.rsuser
+server/*.suo
+server/*.user
+server/*.userosscache
+server/*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+server/*.userprefs
+
+# Mono auto generated files
+server/mono_crash.*
+
+# Build results
+server/[Dd]ebug/
+server/[Dd]ebugPublic/
+server/[Rr]elease/
+server/[Rr]eleases/
+server/x64/
+server/x86/
+server/[Ww][Ii][Nn]32/
+server/[Aa][Rr][Mm]/
+server/[Aa][Rr][Mm]64/
+server/bld/
+server/[Bb]in/
+server/[Oo]bj/
+server/[Ll]og/
+server/[Ll]ogs/
+
+# Visual Studio cache/options directory
+server/.vs/
+
+# MSTest test Results
+server/[Tt]est[Rr]esult*/
+server/[Bb]uild[Ll]og.*
+
+# NUnit
+server/*.VisualState.xml
+server/TestResult.xml
+server/nunit-*.xml
+
+# .NET Core
+server/project.lock.json
+server/project.fragment.lock.json
+server/artifacts/
+
+# ASP.NET Scaffolding
+server/ScaffoldingReadMe.txt
+
+# =======================
+# DEPLOYMENT
+# =======================
+
+# Build scripts outputs
+publish/
+*.zip
+*.tar.gz
+
+# Docker
+.dockerignore
+Dockerfile.build
+
+# =======================
+# SECURITY
+# =======================
+
+# Never commit these files
+*.key
+*.pem
+*.p12
+*.pfx
+appsettings.Production.json
+ConnectionStrings.config
+
+# =======================
+# TEMPORARY FILES
+# =======================
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# =======================
+# NODE MODULES (Global)
+# =======================
+node_modules/
