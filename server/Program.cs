@@ -14,8 +14,10 @@ builder.Services.AddCors(options =>
             {
                 // Development - permitir localhost
                 policy.WithOrigins(
-                    "http://localhost:5173", 
+                    "http://localhost:5173",  
                     "https://localhost:5173", 
+                    "http://localhost:5174", 
+                    "https://localhost:5174", 
                     "http://localhost:4173", 
                     "https://localhost:4173",
                     "http://localhost:5184", 

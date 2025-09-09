@@ -37,7 +37,7 @@ export default function Navbar() {
         margin: '0 auto'
       }}>
         <h2 style={{ color: 'var(--color-text-primary)', margin: 0 }}>
-          Hogar de Ancianos "Casa Nazareth" de Moravia 
+          🏠 Hogar de Ancianos "Casa Nazareth" de Moravia 
         </h2>
         <div>
           <Link 
