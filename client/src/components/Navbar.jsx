@@ -4,29 +4,41 @@ export default function Navbar() {
   const location = useLocation()
   
   const navStyle = {
-    backgroundColor: '#2c3e50',
+    backgroundColor: 'var(--color-secondary)',
+    borderBottom: '2px solid var(--color-tertiary)',
     padding: '1rem 2rem',
+    boxShadow: 'var(--shadow-light)',
     marginBottom: '2rem'
   }
   
   const linkStyle = {
-    color: 'white',
+    color: 'var(--color-text-primary)',
     textDecoration: 'none',
     margin: '0 1rem',
     padding: '0.5rem 1rem',
-    borderRadius: '4px',
-    transition: 'background-color 0.3s'
+    borderRadius: 'var(--border-radius)',
+    transition: 'all 0.3s ease',
+    fontWeight: '500'
   }
   
   const activeLinkStyle = {
     ...linkStyle,
-    backgroundColor: '#34495e'
+    backgroundColor: 'var(--color-primary)',
+    color: 'var(--color-text-dark)'
   }
-  
+
   return (
     <nav style={navStyle}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <h2 style={{ color: 'white', margin: 0 }}>Hogar de Ancianos "Casa Nazareth" de Moravia </h2>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'center',
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        <h2 style={{ color: 'var(--color-text-primary)', margin: 0 }}>
+          Hogar de Ancianos "Casa Nazareth" de Moravia 
+        </h2>
         <div>
           <Link 
             to="/" 

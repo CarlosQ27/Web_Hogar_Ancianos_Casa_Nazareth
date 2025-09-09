@@ -18,56 +18,82 @@ export default function Home() {
 
   return (
     <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ color: '#2c3e50', textAlign: 'center' }}>
+      <h1 style={{ color: 'var(--color-secondary)', textAlign: 'center' }}>
         Bienvenido a Hogar Nazareth
       </h1>
       
       <div style={{ 
-        backgroundColor: '#ecf0f1', 
+        backgroundColor: 'var(--color-quaternary)', 
         padding: '1.5rem', 
-        borderRadius: '8px',
-        marginBottom: '2rem'
+        borderRadius: 'var(--border-radius)',
+        marginBottom: '2rem',
+        border: '1px solid var(--color-tertiary)',
+        boxShadow: 'var(--shadow-light)'
       }}>
-        <h3>Conexión con el Backend:</h3>
-        <p>Respuesta del servidor: <strong style={{ color: '#27ae60' }}>{msg}</strong></p>
+        <h3 style={{ color: 'var(--color-secondary)' }}>Conexión con Backend:</h3>
+        <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text-secondary)' }}>
+          Mensaje del servidor: <strong style={{ color: 'var(--color-text-primary)' }}>{msg}</strong>
+        </p>
+        <pre style={{ backgroundColor: 'var(--color-text-primary)', color: 'var(--color-primary)', padding: '1rem', borderRadius: 'var(--border-radius)' }}>
+          URL de API: {API_URL}/hello
+        </pre>
       </div>
 
-      <div style={{ textAlign: 'center' }}>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#555' }}>
-          Un lugar donde la esperanza encuentra un hogar. Nos dedicamos a brindar 
-          apoyo, amor y oportunidades a quienes más lo necesitan en nuestra comunidad.
+      <div style={{ 
+        backgroundColor: 'var(--color-primary)', 
+        padding: '2rem', 
+        borderRadius: 'var(--border-radius)',
+        border: '1px solid var(--color-tertiary)',
+        boxShadow: 'var(--shadow-light)',
+        textAlign: 'center'
+      }}>
+        <h2 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>
+          Hogar de Ancianos Casa Nazareth
+        </h2>
+        <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
+          Un lugar lleno de amor, cuidado y esperanza para nuestros adultos mayores.
         </p>
         
         <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-around', 
-          marginTop: '3rem',
-          flexWrap: 'wrap'
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '2rem'
         }}>
           <div style={{ 
-            backgroundColor: 'white', 
+            backgroundColor: 'var(--color-tertiary)', 
             padding: '1.5rem', 
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            margin: '1rem',
-            flex: '1',
-            minWidth: '250px'
+            borderRadius: 'var(--border-radius)',
+            boxShadow: 'var(--shadow-light)'
           }}>
-            <h3 style={{ color: '#e74c3c' }}>Misión</h3>
-            <p>Crear un ambiente de amor y cuidado para todos.</p>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🏠 Cuidado Integral</h4>
+            <p style={{ color: 'var(--color-text-secondary)' }}>
+              Atención médica y cuidado personalizado las 24 horas del día.
+            </p>
           </div>
           
           <div style={{ 
-            backgroundColor: 'white', 
+            backgroundColor: 'var(--color-tertiary)', 
             padding: '1.5rem', 
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-            margin: '1rem',
-            flex: '1',
-            minWidth: '250px'
+            borderRadius: 'var(--border-radius)',
+            boxShadow: 'var(--shadow-light)'
           }}>
-            <h3 style={{ color: '#3498db' }}>Visión</h3>
-            <p>Una comunidad donde todos tengan oportunidades.</p>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>❤️ Ambiente Familiar</h4>
+            <p style={{ color: 'var(--color-text-secondary)' }}>
+              Un hogar cálido donde cada residente es parte de nuestra familia.
+            </p>
+          </div>
+          
+          <div style={{ 
+            backgroundColor: 'var(--color-tertiary)', 
+            padding: '1.5rem', 
+            borderRadius: 'var(--border-radius)',
+            boxShadow: 'var(--shadow-light)'
+          }}>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🎯 Actividades</h4>
+            <p style={{ color: 'var(--color-text-secondary)' }}>
+              Programas de recreación y terapia para mantener activa la mente y el cuerpo.
+            </p>
           </div>
         </div>
       </div>

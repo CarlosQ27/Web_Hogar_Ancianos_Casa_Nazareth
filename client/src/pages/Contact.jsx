@@ -18,24 +18,26 @@ export default function Contact() {
   }, [])
 
   if (loading) {
-    return <div style={{ textAlign: 'center', padding: '2rem' }}>Cargando...</div>
+    return <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-text-secondary)' }}>Cargando...</div>
   }
 
   return (
     <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ color: '#2c3e50', textAlign: 'center' }}>
+      <h1 style={{ color: 'var(--color-secondary)', textAlign: 'center' }}>
         Contáctanos
       </h1>
       
       {contactData && (
         <div style={{ 
-          backgroundColor: '#ecf0f1', 
+          backgroundColor: 'var(--color-quaternary)', 
           padding: '1.5rem', 
-          borderRadius: '8px',
-          marginBottom: '2rem'
+          borderRadius: 'var(--border-radius)',
+          marginBottom: '2rem',
+          border: '1px solid var(--color-tertiary)',
+          boxShadow: 'var(--shadow-light)'
         }}>
-          <h3>Datos del Backend:</h3>
-          <pre style={{ backgroundColor: '#34495e', color: 'white', padding: '1rem', borderRadius: '4px' }}>
+          <h3 style={{ color: 'var(--color-secondary)' }}>Datos del Backend:</h3>
+          <pre style={{ backgroundColor: 'var(--color-text-primary)', color: 'var(--color-primary)', padding: '1rem', borderRadius: 'var(--border-radius)' }}>
             {JSON.stringify(contactData, null, 2)}
           </pre>
         </div>
@@ -48,69 +50,74 @@ export default function Contact() {
         marginTop: '2rem'
       }}>
         <div style={{ 
-          backgroundColor: 'white', 
+          backgroundColor: 'var(--color-primary)', 
           padding: '2rem', 
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          borderRadius: 'var(--border-radius)',
+          boxShadow: 'var(--shadow-light)',
+          border: '1px solid var(--color-tertiary)'
         }}>
-          <h3 style={{ color: '#e74c3c', marginBottom: '1rem' }}>📧 Email</h3>
+          <h3 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>📧 Email</h3>
           <p style={{ fontSize: '1.1rem' }}>
             <a href={`mailto:${contactData?.email || 'contacto@hogarnazareth.org'}`}
-               style={{ color: '#3498db', textDecoration: 'none' }}>
+               style={{ color: 'var(--color-secondary)', textDecoration: 'none' }}>
               {contactData?.email || 'contacto@hogarnazareth.org'}
             </a>
           </p>
         </div>
         
         <div style={{ 
-          backgroundColor: 'white', 
+          backgroundColor: 'var(--color-primary)', 
           padding: '2rem', 
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          borderRadius: 'var(--border-radius)',
+          boxShadow: 'var(--shadow-light)',
+          border: '1px solid var(--color-tertiary)'
         }}>
-          <h3 style={{ color: '#27ae60', marginBottom: '1rem' }}>📞 Teléfono</h3>
+          <h3 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>📞 Teléfono</h3>
           <p style={{ fontSize: '1.1rem' }}>
             <a href={`tel:${contactData?.phone || '+1 (555) 123-4567'}`}
-               style={{ color: '#3498db', textDecoration: 'none' }}>
+               style={{ color: 'var(--color-secondary)', textDecoration: 'none' }}>
               {contactData?.phone || '+1 (555) 123-4567'}
             </a>
           </p>
         </div>
         
         <div style={{ 
-          backgroundColor: 'white', 
+          backgroundColor: 'var(--color-primary)', 
           padding: '2rem', 
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          borderRadius: 'var(--border-radius)',
+          boxShadow: 'var(--shadow-light)',
+          border: '1px solid var(--color-tertiary)',
           gridColumn: 'span 1'
         }}>
-          <h3 style={{ color: '#9b59b6', marginBottom: '1rem' }}>📍 Dirección</h3>
-          <p style={{ fontSize: '1.1rem' }}>
+          <h3 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>📍 Dirección</h3>
+          <p style={{ fontSize: '1.1rem', color: 'var(--color-text-secondary)' }}>
             {contactData?.address || '123 Calle Esperanza, Ciudad, País'}
           </p>
         </div>
         
         <div style={{ 
-          backgroundColor: 'white', 
+          backgroundColor: 'var(--color-primary)', 
           padding: '2rem', 
-          borderRadius: '8px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+          borderRadius: 'var(--border-radius)',
+          boxShadow: 'var(--shadow-light)',
+          border: '1px solid var(--color-tertiary)',
           gridColumn: 'span 1'
         }}>
-          <h3 style={{ color: '#f39c12', marginBottom: '1rem' }}>🕒 Horarios</h3>
-          <p style={{ fontSize: '1.1rem' }}>
+          <h3 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>🕒 Horarios</h3>
+          <p style={{ fontSize: '1.1rem', color: 'var(--color-text-secondary)' }}>
             {contactData?.hours || 'Lunes a Viernes: 9:00 AM - 6:00 PM'}
           </p>
         </div>
       </div>
 
       <div style={{ 
-        backgroundColor: '#2c3e50', 
-        color: 'white', 
+        backgroundColor: 'var(--color-secondary)', 
+        color: 'var(--color-primary)', 
         padding: '2rem', 
-        borderRadius: '8px',
+        borderRadius: 'var(--border-radius)',
         marginTop: '3rem',
-        textAlign: 'center'
+        textAlign: 'center',
+        boxShadow: 'var(--shadow-medium)'
       }}>
         <h3>¿Cómo Podemos Ayudarte?</h3>
         <p style={{ marginBottom: '1.5rem' }}>
@@ -123,24 +130,30 @@ export default function Contact() {
           flexWrap: 'wrap'
         }}>
           <button style={{
-            backgroundColor: '#3498db',
-            color: 'white',
+            backgroundColor: 'var(--color-primary)',
+            color: 'var(--color-secondary)',
             border: 'none',
             padding: '1rem 2rem',
-            borderRadius: '4px',
+            borderRadius: 'var(--border-radius)',
             cursor: 'pointer',
-            fontSize: '1rem'
+            fontSize: '1rem',
+            fontWeight: '500',
+            transition: 'all 0.3s ease',
+            boxShadow: 'var(--shadow-light)'
           }}>
             Enviar Mensaje
           </button>
           <button style={{
-            backgroundColor: '#27ae60',
-            color: 'white',
+            backgroundColor: 'var(--color-tertiary)',
+            color: 'var(--color-text-primary)',
             border: 'none',
             padding: '1rem 2rem',
-            borderRadius: '4px',
+            borderRadius: 'var(--border-radius)',
             cursor: 'pointer',
-            fontSize: '1rem'
+            fontSize: '1rem',
+            fontWeight: '500',
+            transition: 'all 0.3s ease',
+            boxShadow: 'var(--shadow-light)'
           }}>
             Llamar Ahora
           </button>
