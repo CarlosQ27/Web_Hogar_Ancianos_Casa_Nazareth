@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import type { ConfigEnv, UserConfig } from 'vite'
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   const isProduction = mode === 'production'
   
   return {
@@ -18,7 +19,7 @@ export default defineConfig(({ mode }) => {
     },
     preview: {
       port: 4173,
-      https: true
+      https: true as any // Fix para el tipo
     },
     build: {
       outDir: 'dist',
