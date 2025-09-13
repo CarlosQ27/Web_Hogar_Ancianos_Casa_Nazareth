@@ -18,9 +18,11 @@
   
   /* Sombras y bordes */
   --shadow-light: 0 2px 4px rgba(77, 109, 154, 0.1);
-  --shadow-medium: 0 4px 8px rgba(77, 109, 154, 0.15);
-  --shadow-strong: 0 8px 16px rgba(77, 109, 154, 0.2);
-  --border-radius: 8px;
+  --shadow-medium: 0 8px 20px rgba(44,62,80,0.12);
+  --shadow-strong: 0 12px 30px rgba(44,62,80,0.18);
+  --border-radius: 12px;
+
+  --bg-canvas: #eef3f7;
 }
 
 * {
@@ -33,7 +35,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-primary);
+  background-color: var(--bg-canvas);
   margin: 0;
   transition: all 0.3s ease;
 }
@@ -41,6 +43,33 @@ body {
 #root {
   min-height: 100vh;
   background-color: var(--color-primary);
+}
+
+/* Gran “cuadrado” de fondo que centra el contenido */
+.site-background {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  background: transparent; /* usa body como canvas */
+}
+
+/* Cuadrado interior que contiene navbar y página */
+.site-card {
+  width: min(10000px, 96%); /* aumentado a 1280px */
+  background: var(--color-quaternary); /* blanco */
+  border-radius: 16px;
+  padding: 3rem; /* más padding para sentirse más grande */
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+  display: block;
+  margin: 0 auto 2rem; /* centrado; la superposición se controla vía .hero-card */
+}
+
+/* Ajuste: asegurar que el navbar y el contenido ocupen el ancho del site-card */
+.site-card > * {
+  width: 100%;
 }
 
 /* Tipografía */
@@ -129,6 +158,36 @@ nav a:hover, nav a.active {
   color: var(--color-primary);
 }
 
+/* Navbar link group */
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  color: var(--color-text-primary);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.18s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+}
+
+.nav-link.active {
+  background: rgba(255,255,255,0.18);
+  color: var(--color-primary);
+  border-color: rgba(255,255,255,0.2);
+}
+
 /* Contenedores y tarjetas */
 .container {
   max-width: 1200px;
@@ -195,6 +254,45 @@ nav a:hover, nav a.active {
   margin-bottom: 0.5rem;
 }
 
+/* Hero card: centered, se superpone ligeramente al navbar */
+.hero-card {
+  max-width: 1000px;
+  margin: -60px auto 2rem; /* se superpone al navbar */
+  background: var(--color-quaternary);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  z-index: 2;
+}
+
+/* Ajustes para el título dentro de la hero card */
+.hero-card h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+/* Carousel fixes */
+.carousel-wrapper {
+  display: block;
+  position: relative;
+}
+
+.carousel-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 480px) {
+  .carousel-wrapper {
+    height: 180px !important;
+  }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .container {
@@ -224,6 +322,84 @@ nav a:hover, nav a.active {
   
   .page-header {
     padding: 2rem 1rem;
+  }
+
+  /* Navbar link group */
+  .nav-links {
+    gap: 0.5rem;
+    flex-direction: column;
+    background: transparent;
+  }
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Mobile: compact layout to save vertical space */
+@media (max-width: 480px) {
+  /* Reduce outer padding so background uses less space */
+  .site-background {
+    padding: 0.10rem 0; /* menos espacio arriba/abajo */
+  }
+
+  /* Make the inner card use more space on mobile (larger box) */
+  .site-card {
+    width: 100%;
+    padding: 0rem; /* aumentado para que el contenido 'respire' */
+    border-radius: 6px; /* mantener algo de radio para estética */
+    box-shadow: var(--shadow-medium);
+  }
+
+  /* Hero card less overlap and tighter padding */
+  .hero-card {
+    margin: -30px auto 1rem; /* ligera superposición sobre navbar */
+    padding: 1rem; /* un poco más espacioso que antes */
+  }
+
+  .hero-card h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  nav {
+    padding: 0.5rem 0.75rem !important;
+    background-attachment: scroll !important;
+  }
+
+  .nav-title {
+    font-size: 1rem !important;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-link {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Make carousel shorter on phones */
+  .carousel-wrapper {
+    height: 200px !important; /* un poco más alto para mejor presencia */
+  }
+
+  .carousel-wrapper img {
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  /* Feature cards: one column, tighter spacing */
+  .feature-grid {
+    display: block !important;
+  }
+
+  .feature-card {
+    margin-bottom: 0.75rem;
+    padding: 1rem !important;
+    border-radius: 10px;
   }
 }
 

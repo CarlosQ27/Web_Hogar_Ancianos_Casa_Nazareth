@@ -1,45 +1,28 @@
-import { useEffect, useState } from 'react'
+import Carousel from '../components/Carousel'
 
 const API_URL = import.meta.env.VITE_API_URL || '/api'
 
-interface ApiResponse {
-  message: string
-}
-
 export default function Home() {
-  const [msg, setMsg] = useState<string>('Cargando...')
-
-  useEffect(() => {
-    fetch(`${API_URL}/hello`)
-      .then(r => r.json())
-      .then((data: ApiResponse) => setMsg(data.message))
-      .catch(e => {
-        console.error('Error:', e)
-        setMsg('Error al conectar con el backend')
-      })
-  }, [])
+  // Lista estática de imágenes del carousel
+  const carouselImages = [
+    '/Carousel/stock_1.jpg',
+    '/Carousel/stock_2.jpg',
+    '/Carousel/stock_3.jpg',
+    '/Carousel/stock_4.jpg'
+  ]
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ color: 'var(--color-secondary)', textAlign: 'center' }}>
-        Bienvenido a Hogar Nazareth
+    <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+      <h1>
+        Bienvenido a Hogar Casa Nazareth
       </h1>
-      
-      <div style={{ 
-        backgroundColor: 'var(--color-quaternary)', 
-        padding: '1.5rem', 
-        borderRadius: 'var(--border-radius)',
-        marginBottom: '2rem',
-        border: '1px solid var(--color-tertiary)',
-        boxShadow: 'var(--shadow-light)'
-      }}>
-        <h3 style={{ color: 'var(--color-secondary)' }}>Conexión con Backend:</h3>
-        <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--color-text-secondary)' }}>
-          Mensaje del servidor: <strong style={{ color: 'var(--color-text-primary)' }}>{msg}</strong>
-        </p>
-        <pre style={{ backgroundColor: 'var(--color-text-primary)', color: 'var(--color-primary)', padding: '1rem', borderRadius: 'var(--border-radius)' }}>
-          URL de API: {API_URL}/hello
-        </pre>
+
+      <div style={{ marginBottom: '2rem' }}>
+        <Carousel 
+          images={carouselImages}
+          height="400px"
+          autoAdvanceInterval={6000}
+        />
       </div>
 
       <div style={{ 
@@ -50,20 +33,17 @@ export default function Home() {
         boxShadow: 'var(--shadow-light)',
         textAlign: 'center'
       }}>
-        <h2 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>
-          Hogar de Ancianos Casa Nazareth
-        </h2>
         <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem' }}>
-          Un lugar lleno de amor, cuidado y esperanza para nuestros adultos mayores.
+            En el Hogar Casa Nazareth nos dedicamos al Cuido de Adultos Mayores, tratamos de brindarles todas los cuidados y comododades para vivan una vejez feliz.
         </p>
         
-        <div style={{ 
+        <div className="feature-grid" style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
           gap: '1.5rem',
           marginTop: '2rem'
         }}>
-          <div style={{ 
+          <div className="feature-card" style={{ 
             backgroundColor: 'var(--color-tertiary)', 
             padding: '1.5rem', 
             borderRadius: 'var(--border-radius)',
@@ -71,11 +51,11 @@ export default function Home() {
           }}>
             <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🏠 Cuidado Integral</h4>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Atención médica y cuidado personalizado las 24 horas del día.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
           
-          <div style={{ 
+          <div className="feature-card" style={{ 
             backgroundColor: 'var(--color-tertiary)', 
             padding: '1.5rem', 
             borderRadius: 'var(--border-radius)',
@@ -83,11 +63,11 @@ export default function Home() {
           }}>
             <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>❤️ Ambiente Familiar</h4>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Un hogar cálido donde cada residente es parte de nuestra familia.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
           
-          <div style={{ 
+          <div className="feature-card" style={{ 
             backgroundColor: 'var(--color-tertiary)', 
             padding: '1.5rem', 
             borderRadius: 'var(--border-radius)',
@@ -95,7 +75,7 @@ export default function Home() {
           }}>
             <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🎯 Actividades</h4>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Programas de recreación y terapia para mantener activa la mente y el cuerpo.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </div>
         </div>
