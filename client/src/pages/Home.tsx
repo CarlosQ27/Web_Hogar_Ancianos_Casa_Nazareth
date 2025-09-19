@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandHoldingHeart, faCompass } from '@fortawesome/free-solid-svg-icons'
 import Carousel from '../components/Carousel'
 
 const API_URL = import.meta.env.VITE_API_URL || '/api'
@@ -49,9 +51,9 @@ export default function Home() {
             borderRadius: 'var(--border-radius)',
             boxShadow: 'var(--shadow-light)'
           }}>
-            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🏠 Cuidado Integral</h4>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>Misión <FontAwesomeIcon icon={faHandHoldingHeart} /> </h4>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Es una institución basada en los valores de solidaridad, cooperación, respeto y ayuda social, donde el conjunto de estos mismos da una base fuerte y sólida que respalda la experiencia en la atención integral del adulto mayor potenciando así su calidad de vida, en aspectos como estado físico, emocional y social.
             </p>
           </div>
           
@@ -61,21 +63,9 @@ export default function Home() {
             borderRadius: 'var(--border-radius)',
             boxShadow: 'var(--shadow-light)'
           }}>
-            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>❤️ Ambiente Familiar</h4>
+            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>Visión <FontAwesomeIcon icon={faCompass} /></h4>
             <p style={{ color: 'var(--color-text-secondary)' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          
-          <div className="feature-card" style={{ 
-            backgroundColor: 'var(--color-tertiary)', 
-            padding: '1.5rem', 
-            borderRadius: 'var(--border-radius)',
-            boxShadow: 'var(--shadow-light)'
-          }}>
-            <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>🎯 Actividades</h4>
-            <p style={{ color: 'var(--color-text-secondary)' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ser una institución reconocida a nivel nacional, por su calidad de servicio, ambiente familiar de afecto e integridad, sólida en sus recursos humanos y capacidades internas, aptas para dar al adulto mayor el cuidado necesario y oportuno en una de las etapas mas importantes y hermosas de sus vidas.
             </p>
           </div>
         </div>

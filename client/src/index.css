@@ -51,20 +51,21 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  padding: 4rem 1rem;
+  padding: 1rem 0; /* reducido para quitar espacio en blanco */
   background: transparent; /* usa body como canvas */
 }
 
 /* Cuadrado interior que contiene navbar y página */
 .site-card {
-  width: min(10000px, 96%); /* aumentado a 1280px */
+  width: min(1500px, 98%); /* reducido ligeramente desde 1600px */
   background: var(--color-quaternary); /* blanco */
-  border-radius: 16px;
-  padding: 3rem; /* más padding para sentirse más grande */
+  border-radius: 14px;
+  padding: 1.75rem; /* ligero ajuste para menor altura visual */
   box-shadow: var(--shadow-strong);
   overflow: hidden;
   display: block;
-  margin: 0 auto 2rem; /* centrado; la superposición se controla vía .hero-card */
+  margin: 0 auto; /* centrado */
+  transition: transform 0.2s ease;
 }
 
 /* Ajuste: asegurar que el navbar y el contenido ocupen el ancho del site-card */

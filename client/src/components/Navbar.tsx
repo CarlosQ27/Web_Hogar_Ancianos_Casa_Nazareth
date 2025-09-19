@@ -57,9 +57,9 @@ export default function Navbar() {
             Inicio
           </Link>
 
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
+          {/* <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
             Acerca
-          </Link>
+          </Link> */}
 
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
             Contacto
