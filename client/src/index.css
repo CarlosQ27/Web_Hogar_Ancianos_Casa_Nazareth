@@ -168,7 +168,7 @@ nav a:hover, nav a.active {
 
 .nav-link {
   display: inline-block;
-  padding: 0.35rem 0.9rem;
+  padding: 0.45rem 1rem; /* slightly larger, consistent for all */
   border-radius: 999px;
   color: var(--color-text-primary);
   background: rgba(255,255,255,0.06);
@@ -176,6 +176,7 @@ nav a:hover, nav a.active {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.18s ease;
+  white-space: nowrap; /* keep label on one line */
 }
 
 .nav-link:hover {
@@ -188,6 +189,9 @@ nav a:hover, nav a.active {
   color: var(--color-primary);
   border-color: rgba(255,255,255,0.2);
 }
+
+/* Larger variant for prominent links (e.g., "Quiénes somos") */
+/* Removed special large variant to keep all buttons same size */
 
 /* Contenedores y tarjetas */
 .container {
@@ -332,8 +336,10 @@ nav a:hover, nav a.active {
     background: transparent;
   }
   .nav-link {
-    padding: 0.5rem 0.75rem;
+    padding: 0.45rem 0.85rem;
+    white-space: nowrap;
   }
+
 }
 
 /* Mobile: compact layout to save vertical space */
@@ -421,5 +427,102 @@ nav a:hover, nav a.active {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* About page typography and spacing */
+.about-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
+.about-page h2 {
+  color: var(--color-secondary);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-page p,
+.about-page li {
+  color: var(--color-text-dark);
+  font-size: 1.1rem; /* larger for readability */
+  line-height: 1.8;
+}
+
+.about-page section {
+  margin-bottom: 2.25rem;
+}
+
+.about-page ul {
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1rem 1rem 2rem;
+  }
+  .about-page h2 {
+    font-size: 1.7rem;
+  }
+  .about-page p,
+  .about-page li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+/* Contact page */
+.contact-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+}
+
+.contact-title {
+  color: var(--color-secondary);
+  text-align: center;
+  margin: 0 0 1rem 0;
+  font-size: 2.4rem;
+}
+
+.contact-info {
+  max-width: 720px;
+  color: var(--color-text-dark);
+  font-size: 1.2rem;
+  line-height: 2.0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info .contact-link {
+  color: var(--color-secondary);
+}
+
+.contact-hours .hours-title {
+  font-weight: 700;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.contact-map {
+  margin: 0 0 1rem 0;
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 1.9rem;
+    text-align: center;
+  }
+  .contact-info {
+    font-size: 1.12rem;
+    line-height: 1.9;
+  }
+  .contact-actions {
+    justify-content: center;
   }
 }

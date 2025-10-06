@@ -8,6 +8,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   return {
     plugins: [react()],
     server: {
+      host: true, // listen on all addresses (LAN)
       port: 5174,
       proxy: !isProduction ? {
         '/api': {

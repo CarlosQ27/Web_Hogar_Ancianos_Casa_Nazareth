@@ -1,135 +1,35 @@
-import { useEffect, useState } from 'react'
-
-interface AboutData {
-  title: string
-  description: string
-  founded: string
-  mission: string
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAward, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 
 export default function About() {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null)
-  const [loading, setLoading] = useState<boolean>(true)
-
-  useEffect(() => {
-    fetch('/api/about')
-      .then(r => r.json())
-      .then((data: AboutData) => {
-        setAboutData(data)
-        setLoading(false)
-      })
-      .catch(e => {
-        console.error('Error fetching about data:', e)
-        setLoading(false)
-      })
-  }, [])
-
-  if (loading) {
-    return <div style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-text-secondary)' }}>Cargando...</div>
-  }
-
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1 style={{ color: 'var(--color-secondary)', textAlign: 'center' }}>
-        Acerca de Nosotros
-      </h1>
-      
-      {aboutData && (
-        <div style={{ 
-          backgroundColor: 'var(--color-quaternary)', 
-          padding: '1.5rem', 
-          borderRadius: 'var(--border-radius)',
-          marginBottom: '2rem',
-          border: '1px solid var(--color-tertiary)',
-          boxShadow: 'var(--shadow-light)'
-        }}>
-          <h3 style={{ color: 'var(--color-secondary)' }}>Datos del Backend:</h3>
-          <pre style={{ backgroundColor: 'var(--color-text-primary)', color: 'var(--color-primary)', padding: '1rem', borderRadius: 'var(--border-radius)' }}>
-            {JSON.stringify(aboutData, null, 2)}
-          </pre>
-        </div>
-      )}
-
-      <div style={{ 
-        backgroundColor: 'var(--color-primary)', 
-        padding: '2rem', 
-        borderRadius: 'var(--border-radius)',
-        border: '1px solid var(--color-tertiary)',
-        boxShadow: 'var(--shadow-light)',
-        marginBottom: '2rem'
-      }}>
-        <h2 style={{ color: 'var(--color-secondary)', marginBottom: '1rem' }}>
-          {aboutData?.title || 'Acerca de Hogar Nazareth'}
-        </h2>
-        <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', lineHeight: '1.6' }}>
-          {aboutData?.description || 'Somos una organización dedicada a brindar ayuda y esperanza a quienes más lo necesitan.'}
+    <div className="about-page">
+      <section>
+        <h2>Historia <FontAwesomeIcon icon={faBookOpen} /></h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet mauris et neque ornare interdum.
+          Aenean rutrum, orci id facilisis finibus, velit eros dictum tellus, vitae accumsan felis elit eget velit.
+          Suspendisse potenti. Nam euismod, neque at iaculis vestibulum, ligula erat dapibus augue, vel egestas
+          massa arcu non justo. Integer efficitur lorem sed arcu vulputate, ac consectetur arcu convallis.
         </p>
-      </div>
+        <p>
+          Phasellus luctus, nunc ut luctus dapibus, mauris mauris fringilla est, a pharetra erat lorem eget mauris.
+          Integer venenatis, odio vel convallis facilisis, risus enim malesuada libero, nec laoreet risus nisi eget
+          massa.
+        </p>
+      </section>
 
-      <div style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: '2rem',
-        marginTop: '2rem'
-      }}>
-        <div style={{ 
-          backgroundColor: 'var(--color-tertiary)', 
-          padding: '2rem', 
-          borderRadius: 'var(--border-radius)',
-          boxShadow: 'var(--shadow-light)',
-          textAlign: 'center'
-        }}>
-          <h3 style={{ color: 'var(--color-text-primary)', marginBottom: '1rem' }}>📅 Fundado</h3>
-          <p style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--color-secondary)' }}>
-            {aboutData?.founded || '2023'}
-          </p>
-        </div>
-        
-        <div style={{ 
-          backgroundColor: 'var(--color-tertiary)', 
-          padding: '2rem', 
-          borderRadius: 'var(--border-radius)',
-          boxShadow: 'var(--shadow-light)',
-          textAlign: 'center'
-        }}>
-          <h3 style={{ color: 'var(--color-text-primary)', marginBottom: '1rem' }}>🎯 Misión</h3>
-          <p style={{ fontSize: '1.1rem', color: 'var(--color-text-secondary)' }}>
-            {aboutData?.mission || 'Crear un hogar lleno de amor y oportunidades para todos.'}
-          </p>
-        </div>
-      </div>
-
-      <div style={{ 
-        backgroundColor: 'var(--color-secondary)', 
-        color: 'var(--color-primary)', 
-        padding: '2rem', 
-        borderRadius: 'var(--border-radius)',
-        marginTop: '3rem',
-        textAlign: 'center',
-        boxShadow: 'var(--shadow-medium)'
-      }}>
-        <h3>Nuestros Valores</h3>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-around',
-          flexWrap: 'wrap',
-          marginTop: '1.5rem',
-          gap: '1rem'
-        }}>
-          <div>
-            <h4>🤝 Respeto</h4>
-            <p>Dignidad para cada persona</p>
-          </div>
-          <div>
-            <h4>❤️ Compasión</h4>
-            <p>Cuidado con amor</p>
-          </div>
-          <div>
-            <h4>🏆 Excelencia</h4>
-            <p>Calidad en todo</p>
-          </div>
-        </div>
-      </div>
+      <section>
+        <h2>Logros <FontAwesomeIcon icon={faAward} />
+        </h2>
+        <ul>
+          <li>40 adultos mayores a quienes se les brinda atención 24 horas al día.</li>
+          <li>5 tiempos de alimentación diarios para los 40 adultos mayores residentes en el hogar.</li>
+          <li>24 horas de actividades recreativas y de esparcimiento para los adultos mayores.</li>
+          <li>12 actividades recreativas y de esparcimiento para los adultos mayores.</li>
+          <li>624 consultas médicas a lo interno.</li>
+        </ul>
+      </section>
     </div>
   )
 }

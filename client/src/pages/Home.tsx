@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHandHoldingHeart, faCompass } from '@fortawesome/free-solid-svg-icons'
+import { faHandHoldingHeart, faCompass, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Carousel from '../components/Carousel'
 
 const API_URL = import.meta.env.VITE_API_URL || '/api'
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
       <h1>
-        Bienvenido a Hogar Casa Nazareth
+        Bienvenido a Hogar Casa Nazareth <FontAwesomeIcon icon={faHouse} />
       </h1>
 
       <div style={{ marginBottom: '2rem' }}>

@@ -11,7 +11,7 @@ export default function Navbar() {
     backgroundAttachment: 'fixed',
     position: 'relative',
     borderBottom: '2px solid var(--color-tertiary)',
-    padding: '1rem 2rem',
+  padding: '2rem 2rem',
     boxShadow: '0 10px 30px rgba(44,62,80,0.18)',
     marginBottom: '1rem',
     zIndex: 10,
@@ -57,13 +57,19 @@ export default function Navbar() {
             Inicio
           </Link>
 
-          {/* <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
-            Acerca
-          </Link> */}
+          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
+            Quiénes somos
+          </Link>
+
+          <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}>
+            Servicios
+          </Link>
 
           <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
             Contacto
           </Link>
+
+          
         </div>
       </div>
     </nav>
