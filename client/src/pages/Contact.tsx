@@ -30,7 +30,8 @@ export default function Contact() {
           <p>Lunes a Viernes de 8 am a 5 pm</p>
 
           <p className="hours-title">Horario de visitas</p>
-          <p>9 am a 3 pm</p>
+          <p>9 am a 11 am</p>
+          <p>2 pm a 4 pm</p>
         </div>
       </div>
       <h1 className="contact-title" style={{ marginTop: '2rem' }}>
